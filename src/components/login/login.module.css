@@ -25,6 +25,21 @@
     justify-content: space-around;
 }
 
+.loginContainer h1 {
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 3px solid rgba(0, 225, 255, 0.5);
+    margin-bottom: 15px;
+}
+
+.loginContainer h2 {
+    text-align: center;
+    color:white;
+    padding: 8px;
+    border-radius: 15px;
+    background-image: linear-gradient(rgba(0, 225, 255, 0.5), rgba(255, 0, 242, 0.5));
+}
+
 .inputContainer {
     display: flex;
     flex-direction: column;
@@ -35,6 +50,16 @@
     height: 40px;
     border-style: none;
     border-bottom: solid 1px gray;
+    outline: none;
 }
 
+.loginButton {
+    margin-top: 8px;
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 10px;
+}
 
+.loginButton:hover {
+    background-color: bisque;
+}
