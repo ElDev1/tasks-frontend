@@ -1,11 +1,9 @@
 import './App.css'
 import Login from './components/auth/login/Login'
-import Register from './components/auth/register/Register'
 
-function App() {
-
+function App () {
   return (
-    <div >
+    <div>
       <Login />
     </div>
   )
