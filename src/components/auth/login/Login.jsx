@@ -3,6 +3,7 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { signin } from '../../../services/signin.js'
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
   const validate = Yup.object({
@@ -68,7 +69,7 @@ const Login = () => {
               </form>
             )}
           </Formik>
-          <p>Don't have a account yet? <span><a href='#'>Signup</a></span></p>
+          <p>Don't have a account yet? <span><Link to='/register'>Sign up</Link></span></p>
         </div>
       </section>
     </main>

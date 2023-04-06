@@ -1,8 +1,11 @@
 import styles from '../login.module.css'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
+import { signin } from '../../../services/signin.js'
+import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
 
-const Register = () => {
+const Login = () => {
   const validate = Yup.object({
     email: Yup.string()
       .email('Not valid email')
@@ -24,12 +27,20 @@ const Register = () => {
             initialValues={{ email: '', password: '' }}
             validationSchema={validate}
             onSubmit={(values, { resetForm }) => {
-              console.log(values)
+              signin(values).then(res => {
+                console.log(res)
+                if (res.message === 'user not found') {
+                  Swal.fire({
+                    title: 'user not found',
+                    confirmButtonColor: '#ff00f280'
+                  })
+                }
+              })
               resetForm()
             }}
           >
             {({ values, errors, touched, handleBlur, handleChange, handleSubmit, isSubmitting }) => (
-              <form className={styles.loginForm}>
+              <form className={styles.loginForm} onSubmit={handleSubmit}>
                 <div className={styles.inputContainer}>
                   <label id='email'>User name</label>
                   <input
@@ -54,15 +65,15 @@ const Register = () => {
                   />
                   {errors.password && touched.password && <p style={{ color: 'red', fontSize: '12px' }}>{errors.password}</p>}
                 </div>
-                <button className={styles.loginButton}>Login</button>
+                <button className={styles.loginButton} disabled={isSubmitting}>Login</button>
               </form>
             )}
           </Formik>
-          <p>Don't have a account yet? <span><a href='#'>Signup</a></span></p>
+          <p>Back to <span><Link to='/login'>Login</Link></span></p>
         </div>
       </section>
     </main>
   )
 }
 
-export default Register
+export default Login
