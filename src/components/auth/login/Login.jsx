@@ -1,8 +1,8 @@
 import styles from '../login.module.css'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import signin from '../../../services/signin.js'
-import { getData } from '../../../services/getData'
+import { signin } from '../../../services/signin.js'
+import Swal from 'sweetalert2'
 
 const Login = () => {
   const validate = Yup.object({
@@ -26,12 +26,15 @@ const Login = () => {
             initialValues={{ email: '', password: '' }}
             validationSchema={validate}
             onSubmit={(values, { resetForm }) => {
-              // signin(values).then(res => console.log(res.json))
-              getData()
-                .then(res => res.json)
-                .then(res => {
-                  console.log(res)
-                })
+              signin(values).then(res => {
+                console.log(res)
+                if (res.message === 'user not found') {
+                  Swal.fire({
+                    title: 'user not found',
+                    confirmButtonColor: '#ff00f280'
+                  })
+                }
+              })
               resetForm()
             }}
           >
