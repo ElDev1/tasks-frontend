@@ -2,6 +2,7 @@ import styles from '../login.module.css'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import signin from '../../../services/signin.js'
+import { getData } from '../../../services/getData'
 
 const Login = () => {
   const validate = Yup.object({
@@ -25,7 +26,12 @@ const Login = () => {
             initialValues={{ email: '', password: '' }}
             validationSchema={validate}
             onSubmit={(values, { resetForm }) => {
-              signin(values).then(res => console.log(res.json))
+              // signin(values).then(res => console.log(res.json))
+              getData()
+                .then(res => res.json)
+                .then(res => {
+                  console.log(res)
+                })
               resetForm()
             }}
           >

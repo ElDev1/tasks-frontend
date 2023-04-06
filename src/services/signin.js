@@ -1,6 +1,6 @@
 import { API_URL } from './API_URL'
 
-const signin = async (data) => {
+const signin = (data) => {
   return fetch(`${API_URL}/api/auth/signin`, {
     method: 'POST',
     headers: {
