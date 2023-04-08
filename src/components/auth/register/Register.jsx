@@ -1,7 +1,7 @@
 import styles from '../login.module.css'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import { signin } from '../../../services/signin.js'
+import { signup } from '../../../services/signup'
 import Swal from 'sweetalert2'
 import { Link } from 'react-router-dom'
 
@@ -12,6 +12,9 @@ const Login = () => {
       .required('Email required'),
     password: Yup.string()
       .required('Password required')
+      .min(4),
+    userName: Yup.string()
+      .required('user name required')
       .min(4)
   })
 
@@ -24,17 +27,11 @@ const Login = () => {
             <h2>Sign Up</h2>
           </div>
           <Formik
-            initialValues={{ email: '', password: '' }}
+            initialValues={{ userName: '', email: '', password: '' }}
             validationSchema={validate}
             onSubmit={(values, { resetForm }) => {
-              signin(values).then(res => {
+              signup(values).then(res => {
                 console.log(res)
-                if (res.message === 'user not found') {
-                  Swal.fire({
-                    title: 'user not found',
-                    confirmButtonColor: '#ff00f280'
-                  })
-                }
               })
               resetForm()
             }}
@@ -42,7 +39,19 @@ const Login = () => {
             {({ values, errors, touched, handleBlur, handleChange, handleSubmit, isSubmitting }) => (
               <form className={styles.loginForm} onSubmit={handleSubmit}>
                 <div className={styles.inputContainer}>
-                  <label id='email'>User name</label>
+                  <label id='userName'>User name</label>
+                  <input
+                    name='userName'
+                    type='text'
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.userName}
+                    placeholder='type your user name'
+                  />
+                  {errors.userName && touched.userName && <p style={{ color: 'red', fontSize: '12px' }}>{errors.userName}</p>}
+                </div>
+                <div className={styles.inputContainer}>
+                  <label id='email'>Email</label>
                   <input
                     name='email'
                     type='email'
@@ -65,7 +74,7 @@ const Login = () => {
                   />
                   {errors.password && touched.password && <p style={{ color: 'red', fontSize: '12px' }}>{errors.password}</p>}
                 </div>
-                <button className={styles.loginButton} disabled={isSubmitting}>Login</button>
+                <button className={styles.loginButton} disabled={isSubmitting}>Register</button>
               </form>
             )}
           </Formik>
