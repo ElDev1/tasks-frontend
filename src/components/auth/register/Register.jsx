@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { signup } from '../../../services/signup'
 import Swal from 'sweetalert2'
-import { Link } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 
 const Login = () => {
   const validate = Yup.object({
@@ -18,6 +18,8 @@ const Login = () => {
       .min(4)
   })
 
+  const navigate = useNavigate()
+
   return (
     <main className={styles.loginMain}>
       <section className={styles.loginSection}>
@@ -30,9 +32,23 @@ const Login = () => {
             initialValues={{ userName: '', email: '', password: '' }}
             validationSchema={validate}
             onSubmit={(values, { resetForm }) => {
-              signup(values).then(res => {
-                console.log(res)
-              })
+              signup(values)
+                .then(res => {
+                  if (res.message === 'the user already exist' || res.message === 'the email already exist') {
+                    Swal.fire({
+                      title: `${res.message}`,
+                      confirmButtonColor: '#ff00f280'
+                    })
+                    return
+                  }
+                  Swal.fire({
+                    title: 'User created!',
+                    confirmButtonColor: '#ff00f280'
+                  })
+                  // eslint-disable-next-line no-undef
+                  localStorage.setItem('token', res.token)
+                  navigate('/')
+                })
               resetForm()
             }}
           >
