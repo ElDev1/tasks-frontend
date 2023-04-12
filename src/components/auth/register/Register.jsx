@@ -21,9 +21,9 @@ const Login = () => {
   const navigate = useNavigate()
 
   return (
-    <main className={styles.loginMain}>
-      <section className={styles.loginSection}>
-        <div className={styles.loginContainer}>
+    <main className={styles.authMain}>
+      <section className={styles.authSection}>
+        <div className={styles.authContainer}>
           <div>
             <div className={styles.logo}>
               <img src='../../../../public/images/tasksAppLogo.png' width='110px' height='100px' />
@@ -55,7 +55,7 @@ const Login = () => {
             }}
           >
             {({ values, errors, touched, handleBlur, handleChange, handleSubmit, isSubmitting }) => (
-              <form className={styles.loginForm} onSubmit={handleSubmit}>
+              <form className={styles.authForm} onSubmit={handleSubmit}>
                 <div className={styles.inputContainer}>
                   <label id='userName'>User name</label>
                   <input
@@ -92,7 +92,7 @@ const Login = () => {
                   />
                   {errors.password && touched.password && <p style={{ color: 'red', fontSize: '12px' }}>{errors.password}</p>}
                 </div>
-                <button className={styles.loginButton} disabled={isSubmitting}>Register</button>
+                <button className={styles.authButton} disabled={isSubmitting}>Register</button>
               </form>
             )}
           </Formik>

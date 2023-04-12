@@ -1,4 +1,4 @@
-.loginMain {
+.authMain {
     background-image: linear-gradient(rgba(0, 225, 255, 0.5),rgba(0, 102, 255, 0.5), rgba(255, 0, 242, 0.5));
     height: 100vh;
     box-sizing: border-box;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.loginSection {
+.authSection {
     max-width: 800px;
     background-color: white;
     height: 600px;
@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.loginContainer {
+.authContainer {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
     margin-bottom: 15px;
 }
 
-.loginContainer h2 {
+.authContainer h2 {
     text-align: center;
     color:white;
     padding: 8px;
@@ -55,13 +55,13 @@
     outline: none;
 }
 
-.loginButton {
+.authButton {
     margin-top: 8px;
     width: 100%;
     background-color: whitesmoke;
     padding: 10px;
 }
 
-.loginButton:hover {
+.authButton:hover {
     background-color: bisque;
 }
