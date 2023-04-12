@@ -10,7 +10,8 @@
 .loginSection {
     max-width: 800px;
     background-color: white;
-    height: 500px;
+    height: 600px;
+    padding: 10px 0;
     width: 400px;
     border-radius: 5px;
     display: flex;
@@ -26,10 +27,10 @@
     width: 250px;
 }
 
-.loginContainer h1 {
-    text-align: center;
-    padding-bottom: 8px;
-    border-bottom: 3px solid rgba(0, 225, 255, 0.5);
+.logo {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0;
     margin-bottom: 15px;
 }
 

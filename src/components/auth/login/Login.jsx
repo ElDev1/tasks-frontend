@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 import * as Yup from 'yup'
 import { signin } from '../../../services/signin.js'
 import Swal from 'sweetalert2'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const validate = Yup.object({
@@ -15,12 +15,16 @@ const Login = () => {
       .min(4)
   })
 
+  const navigate = useNavigate()
+
   return (
     <main className={styles.loginMain}>
       <section className={styles.loginSection}>
         <div className={styles.loginContainer}>
           <div>
-            <h1>TaskToDo</h1>
+            <div className={styles.logo}>
+              <img src='../../../../public/images/tasksAppLogo.png' width='110px' height='100px' />
+            </div>
             <h2>Sign In</h2>
           </div>
           <Formik
@@ -34,7 +38,11 @@ const Login = () => {
                     title: 'user not found',
                     confirmButtonColor: '#ff00f280'
                   })
+                  return
                 }
+                // eslint-disable-next-line no-undef
+                localStorage.setItem('token', res.token)
+                navigate('/')
               })
               resetForm()
             }}
@@ -42,7 +50,7 @@ const Login = () => {
             {({ values, errors, touched, handleBlur, handleChange, handleSubmit, isSubmitting }) => (
               <form className={styles.loginForm} onSubmit={handleSubmit}>
                 <div className={styles.inputContainer}>
-                  <label id='email'>User name</label>
+                  <label id='email'>Email</label>
                   <input
                     name='email'
                     type='email'

@@ -25,7 +25,9 @@ const Login = () => {
       <section className={styles.loginSection}>
         <div className={styles.loginContainer}>
           <div>
-            <h1>TaskToDo</h1>
+            <div className={styles.logo}>
+              <img src='../../../../public/images/tasksAppLogo.png' width='110px' height='100px' />
+            </div>
             <h2>Sign Up</h2>
           </div>
           <Formik

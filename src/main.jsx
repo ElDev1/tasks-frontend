@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 
 import Login from './components/auth/login/Login'
 import Register from './components/auth/register/Register'
-import App from './App'
+import TasksMain from './components/tasksPage/TasksMain/TasksMain'
 import ErrorPage from './components/errorPage/ErrorPage'
 
 const RequiredAuth = ({ children }) => {
@@ -21,7 +21,7 @@ const RequiredAuth = ({ children }) => {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <RequiredAuth> <App /> </RequiredAuth>,
+    element: <RequiredAuth> <TasksMain /> </RequiredAuth>,
     errorElement: <ErrorPage />
   },
   {
