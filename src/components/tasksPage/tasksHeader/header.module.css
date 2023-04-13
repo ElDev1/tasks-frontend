@@ -1,0 +1,29 @@
+.tasksHeader {
+    display: flex;
+    justify-content: space-around;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+
+.headerButton {
+    margin: auto 0;
+    height: 50px;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    background-color: rgb(73, 160, 241);
+    color: white;
+    font-size: 15px;
+    transition: 0.09s ease;
+}
+
+.headerButton:hover {
+    background-color: rgb(206, 39, 197);
+    transition: 0.09s ease;
+}
+
+.headerImage {
+    width: 90px;
+    height: 80px;
+    margin: auto 0;
+}

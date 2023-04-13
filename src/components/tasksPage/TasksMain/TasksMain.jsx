@@ -1,8 +1,10 @@
-import React from 'react'
+import TasksHeader from '../tasksHeader/TasksHeader'
 
 const TasksMain = () => {
   return (
-    <div>TasksMain</div>
+    <main>
+      <TasksHeader />
+    </main>
   )
 }
 
