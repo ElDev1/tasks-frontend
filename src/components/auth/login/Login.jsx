@@ -42,6 +42,8 @@ const Login = () => {
                 }
                 // eslint-disable-next-line no-undef
                 localStorage.setItem('token', res.token)
+                // eslint-disable-next-line no-undef
+                localStorage.setItem('user', values.email)
                 navigate('/')
               })
               resetForm()

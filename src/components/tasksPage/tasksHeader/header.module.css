@@ -1,13 +1,14 @@
 .tasksHeader {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 .headerButton {
     margin: auto 0;
-    height: 50px;
+    margin-right: 200px;
+    height: 45px;
     border: none;
     width: 100px;
     border-radius: 5px;
@@ -23,7 +24,11 @@
 }
 
 .headerImage {
+    margin: auto 0;
+    margin-left: 200px;
+}
+
+.headerImage img {
     width: 90px;
     height: 80px;
-    margin: auto 0;
 }
