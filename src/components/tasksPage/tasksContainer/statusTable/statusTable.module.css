@@ -1,0 +1,10 @@
+.table {
+    width: 500px;
+    height: auto;
+    background-color: aliceblue;
+}
+
+.table h2 {
+    text-align: center;
+    color: blueviolet;
+}

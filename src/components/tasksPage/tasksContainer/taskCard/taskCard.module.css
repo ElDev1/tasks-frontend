@@ -1,0 +1,10 @@
+.taskContainer {
+    width: 80%;
+    height: 120px;
+    margin: 0 auto;
+    background-color: azure;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
