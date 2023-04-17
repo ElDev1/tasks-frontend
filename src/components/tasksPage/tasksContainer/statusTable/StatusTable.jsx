@@ -3,13 +3,16 @@ import TaskCard from '../taskCard/TaskCard'
 
 const StatusTable = ({ statusTask }) => {
   return (
-    <section className={styles.table}>
-      <h2>{statusTask}</h2>
-      <TaskCard />
-      <TaskCard />
-      <TaskCard />
-      <TaskCard />
-      <TaskCard />
+    <section>
+      <div className={styles.table}>
+        <h2>{statusTask}</h2>
+        <TaskCard />
+        <TaskCard />
+        <TaskCard />
+        <TaskCard />
+        <TaskCard />
+      </div>
+      <button>Add</button>
     </section>
   )
 }
