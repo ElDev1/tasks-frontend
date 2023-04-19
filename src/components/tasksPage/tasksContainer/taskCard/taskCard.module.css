@@ -2,8 +2,9 @@
     width: 80%;
     height: 120px;
     margin: 0 auto;
-    background-color: azure;
+    background-color: rgb(255, 255, 255);
     margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .tasksElements {
@@ -15,7 +16,7 @@
 }
 
 .tasksElements h3 {
-    color: cornflowerblue;
+    color: rgb(131, 127, 131);
 }
 
 .tasksElements button {
@@ -23,13 +24,13 @@
     height: 20px;
     border: none;
     border-radius: 5px;
-    background-color: blue;
+    background-color: rgb(13, 213, 240);
     transition: 0.09s ease;
     color: white;
 }
 
 .tasksElements button:hover {
-    background-color: aqua;
+    background-color: rgb(44, 150, 150);
     transition: 0.09s ease;
 
 }

@@ -1,10 +1,12 @@
 .table {
     width: 500px;
     height: auto;
-    background-color: aliceblue;
+    padding-bottom: 10px;
+    background-color: rgb(217, 243, 245, 0.6);
 }
 
 .table h2 {
     text-align: center;
-    color: blueviolet;
+    padding: 10px 0;
+    color: rgb(255, 255, 255);
 }

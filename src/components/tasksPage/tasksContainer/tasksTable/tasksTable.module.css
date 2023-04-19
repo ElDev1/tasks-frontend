@@ -1,5 +1,5 @@
 .tasksContainer {
     display: flex;
     justify-content: space-between;
-    margin: 50px 50px;
+    padding: 50px 50px;
 }

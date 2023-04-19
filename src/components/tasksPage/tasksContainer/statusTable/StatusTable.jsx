@@ -9,8 +9,6 @@ const StatusTable = ({ statusTask }) => {
         <TaskCard />
         <TaskCard />
         <TaskCard />
-        <TaskCard />
-        <TaskCard />
       </div>
       <button>Add</button>
     </section>

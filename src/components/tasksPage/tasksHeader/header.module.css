@@ -1,8 +1,9 @@
 .tasksHeader {
     display: flex;
     justify-content: space-between;
-    height: 100px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    background-color: white;
+    height: 100px;
 }
 
 .headerButton {
