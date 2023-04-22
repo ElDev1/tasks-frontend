@@ -10,7 +10,7 @@ const StatusTable = ({ statusTask }) => {
         <TaskCard />
         <TaskCard />
       </div>
-      <button className={styles.buttonTable}>Add another card <i /> </button>
+      <button className={styles.buttonTable}>Add another card <strong>+</strong><i /> </button>
     </section>
   )
 }

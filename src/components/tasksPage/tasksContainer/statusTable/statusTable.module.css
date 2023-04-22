@@ -1,23 +1,30 @@
 .table {
-    width: 500px;
+    width: 450px;
     height: auto;
     padding-bottom: 10px;
-    background-color: rgba(187, 250, 255, 0.6);
 }
 
 .table h2 {
     text-align: center;
     padding: 10px 0;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 .buttonTable {
     margin-top: 10px;
     width: 200px;
     border: none;
-    background-color: rgb(133, 210, 240, 0.5);
+    background-color: #d9e1fd;
     border-radius: 5px;
-    color: rgb(8, 91, 245);
+    color: #1e67ec;
     height: 30px;
     text-align: left;
+}
+
+.buttonTable:hover {
+    background-color: #9fb2ec;
+}
+
+@media screen {
+    
 }
